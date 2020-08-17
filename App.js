@@ -1,34 +1,18 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Alert,
-  Button,
-  Platform,
-  StatusBar,
-  SafeAreaView,
-} from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import { View, StyleSheet } from "react-native";
+import AppButton from "./app/components/AppButton";
 
 export default function App() {
-  const { landscape } = useDeviceOrientation();
-  return (
-    <SafeAreaView style={styles.container}>
-      <view></view>
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+  console.log("app executed!");
+  return <WelcomeScreen />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
   },
 });
