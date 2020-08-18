@@ -2,6 +2,11 @@
   "expo": {
     "name": "SellMyCrap",
     "slug": "SellMyCrap",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -13,12 +18,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "description": "A marketplace for selling the stuff you don't need anymore.",
+    "githubUrl": "https://github.com/hadihub/sell-my-crap.git"
   }
 }
