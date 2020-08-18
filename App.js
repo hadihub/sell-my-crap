@@ -8,7 +8,7 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
   console.log("app executed!");
-  return <ListingDetailsScreen />;
+  return <ViewImageScreen />;
 }
 
 const styles = StyleSheet.create({
