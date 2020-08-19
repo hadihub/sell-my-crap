@@ -8,20 +8,13 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import Screen from "./app/components/Screen";
 import CircularIcon from "./app/components/CircularIcon";
+import ListItem from "./app/components/ListItem";
+import AccountScreen from "./app/screens/AccountScreen";
 
 export default function App() {
   console.log("app executed!");
 
-  return (
-    <Screen>
-      <CircularIcon
-        name="email"
-        size={50}
-        backgroundColor="red"
-        CirculariconColor="white"
-      />
-    </Screen>
-  );
+  return <AccountScreen />;
 }
 
 const styles = StyleSheet.create({
