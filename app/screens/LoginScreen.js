@@ -1,10 +1,8 @@
-import { Formik } from "formik";
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
-import AppButton from "../components/AppButton";
-import AppFormField from "../components/AppFormField";
 import AppScreen from "../components/AppScreen";
+import { AppForm, AppFormField, FormSubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -15,7 +13,7 @@ export default function LoginScreen() {
   return (
     <AppScreen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
-      <Formik
+      <AppForm
         initialValues={{
           email: "",
           password: "",
@@ -23,34 +21,28 @@ export default function LoginScreen() {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
-          <React.Fragment>
-            <AppFormField
-              /*Refer to TextInput Props*/
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="email"
-              keyboarType="email-address"
-              name="email"
-              placeholder="email"
-              textContentType="emailAddress"
-              /*Only for iOS to enable autofill*/
-            />
-            <AppFormField
-              /*Refer to TextInput Props*/
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="lock"
-              name="password"
-              placeholder="Password"
-              secureTextEntry
-              textContentType="password"
-              /*Only for iOS to enable autofill*/
-            />
-            <AppButton title="Login" onPress={handleSubmit} />
-          </React.Fragment>
-        )}
-      </Formik>
+        <AppFormField
+          /*Refer to TextInput Props*/
+          autoCapitalize="none"
+          autoCorrect={false}
+          icon="email"
+          keyboarType="email-address"
+          name="email"
+          placeholder="email"
+          textContentType="emailAddress"
+        />
+        <AppFormField
+          /*Refer to TextInput Props*/
+          autoCapitalize="none"
+          autoCorrect={false}
+          icon="lock"
+          name="password"
+          placeholder="Password"
+          secureTextEntry
+          textContentType="password"
+        />
+        <FormSubmitButton title="Login" />
+      </AppForm>
     </AppScreen>
   );
 }
