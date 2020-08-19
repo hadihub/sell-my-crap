@@ -6,13 +6,26 @@ import {
   TouchableWithoutFeedback,
   Modal,
   Button,
+  FlatList,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 import AppText from "./AppText";
+import AppScreen from "./AppScreen";
+import PickerItem from "./PickerItem";
 
-export default function AppPicker({ icon, placeholder, ...otherProps }) {
+export default function AppPicker({
+  icon,
+  items,
+  onSelectItem,
+  selectedItem,
+  placeholder,
+}) {
   const [modalVisible, setModalVisible] = useState(false);
+  const handleItemSelection = (item) => {
+    onSelectItem(item);
+    setModalVisible(false);
+  };
   return (
     <React.Fragment>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
@@ -25,7 +38,9 @@ export default function AppPicker({ icon, placeholder, ...otherProps }) {
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>{placeholder}</AppText>
+          <AppText style={styles.text}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </AppText>
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
@@ -33,9 +48,18 @@ export default function AppPicker({ icon, placeholder, ...otherProps }) {
           />
         </View>
       </TouchableWithoutFeedback>
-
       <Modal visible={modalVisible} animationType="slide">
         <Button title="close" onPress={() => setModalVisible(false)} />
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.value.toString()}
+          renderItem={({ item }) => (
+            <PickerItem
+              label={item.label}
+              onPress={() => handleItemSelection(item)}
+            />
+          )}
+        />
       </Modal>
     </React.Fragment>
   );
@@ -44,7 +68,7 @@ export default function AppPicker({ icon, placeholder, ...otherProps }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: defaultStyles.color.light,
-    borderRadius: 25,
+    borderRadius: 20,
     alignItems: "center",
     flexDirection: "row",
     width: "100%",
