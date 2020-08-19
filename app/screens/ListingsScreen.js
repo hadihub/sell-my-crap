@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Screen from "../components/Screen";
+import AppScreen from "../components/AppScreen";
 import { FlatList } from "react-native-gesture-handler";
 import Card from "../components/Card";
 import colors from "../config/colors";
@@ -22,7 +22,7 @@ const listings = [
 
 export default function ListingsScreen() {
   return (
-    <Screen style={styles.screen}>
+    <AppScreen style={styles.screen}>
       <FlatList
         data={listings}
         keyExtractor={(listings) => listings.id.toString()}
@@ -34,7 +34,7 @@ export default function ListingsScreen() {
           />
         )}
       />
-    </Screen>
+    </AppScreen>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
-import Screen from "../components/Screen";
+import AppScreen from "../components/AppScreen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import CircularIcon from "../components/CircularIcon";
@@ -26,7 +26,7 @@ const menuItems = [
 
 export default function AccountScreen() {
   return (
-    <Screen style={styles.screen}>
+    <AppScreen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
           title="Hadi M"
@@ -56,7 +56,7 @@ export default function AccountScreen() {
         title="Log Out"
         IconComponent={<CircularIcon name="logout" backgroundColor="#ffe66d" />}
       />
-    </Screen>
+    </AppScreen>
   );
 }
 
