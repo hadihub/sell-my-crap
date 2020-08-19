@@ -10,11 +10,12 @@ import Screen from "./app/components/Screen";
 import CircularIcon from "./app/components/CircularIcon";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
+import ListingsScreen from "./app/screens/ListingsScreen";
 
 export default function App() {
   console.log("app executed!");
 
-  return <AccountScreen />;
+  return <ListingsScreen />;
 }
 
 const styles = StyleSheet.create({
