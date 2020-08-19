@@ -1,17 +1,15 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
-  StyleSheet,
-  View,
-  TextInput,
-  TouchableWithoutFeedback,
-  Modal,
   Button,
   FlatList,
+  Modal,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 import AppText from "./AppText";
-import AppScreen from "./AppScreen";
 import PickerItem from "./PickerItem";
 
 export default function AppPicker({
@@ -67,13 +65,13 @@ export default function AppPicker({
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
     backgroundColor: defaultStyles.color.light,
     borderRadius: 20,
-    alignItems: "center",
     flexDirection: "row",
-    width: "100%",
-    padding: 15,
     marginVertical: 10,
+    padding: 15,
+    width: "100%",
   },
   icon: {
     margin: 10,
