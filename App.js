@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
-import { View, StyleSheet, TextInput, Text } from "react-native";
+import { View, StyleSheet, TextInput, Text, Switch } from "react-native";
 import AppButton from "./app/components/AppButton";
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
@@ -12,13 +12,14 @@ import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
-  console.log("app executed!");
-  const [firstName, setFirstName] = useState("");
+  const [isNew, setIsNew] = useState(false);
   return (
     <Screen>
-      <AppTextInput placeholder="Username" icon="email" />
+      <AppPicker icon="apps" placeholder="category" />
+      <AppTextInput icon="email" placeholder="email" />
     </Screen>
   );
 }
