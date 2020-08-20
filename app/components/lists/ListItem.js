@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import {
   Image,
@@ -16,6 +17,7 @@ export default function ListItem({
   IconComponent,
   onPress,
   renderRightActions,
+  showChevron = false,
 }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
@@ -27,6 +29,13 @@ export default function ListItem({
             <Text style={styles.title}>{title}</Text>
             {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
           </View>
+          {showChevron && (
+            <MaterialCommunityIcons
+              name="chevron-right"
+              size={24}
+              color={colors.medium}
+            />
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -35,19 +44,20 @@ export default function ListItem({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
     alignItems: "center",
-    padding: 20,
     backgroundColor: colors.white,
+    flexDirection: "row",
+    padding: 20,
   },
   detailsContainer: {
-    marginLeft: 10,
+    flex: 1,
     justifyContent: "center",
+    marginLeft: 10,
   },
   image: {
-    width: 70,
-    height: 70,
     borderRadius: 35,
+    height: 70,
+    width: 70,
   },
   subTitle: {
     color: colors.medium,

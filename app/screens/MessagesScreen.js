@@ -57,6 +57,7 @@ export default function MessagesScreen() {
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
+            showChevron={true}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
