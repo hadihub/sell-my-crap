@@ -18,6 +18,7 @@ export default function AppPicker({
   onSelectItem,
   selectedItem,
   placeholder,
+  width = "100%",
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const handleItemSelection = (item) => {
@@ -27,7 +28,7 @@ export default function AppPicker({
   return (
     <React.Fragment>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -71,7 +72,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginVertical: 10,
     padding: 15,
-    width: "100%",
   },
   icon: {
     margin: 10,

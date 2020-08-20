@@ -4,13 +4,14 @@ import { StyleSheet } from "react-native";
 import AppTextInput from "../AppTextInput";
 import ErrorMessage from "./ErrorMessage";
 
-export default function AppFromField({ name, ...otherProps }) {
+export default function AppFromField({ name, width = "100%", ...otherProps }) {
   const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
   return (
     <React.Fragment>
       <AppTextInput
         onBlur={() => setFieldTouched(name)} // this sets the touched.email to true
         onChangeText={handleChange(name)}
+        width={width}
         {...otherProps}
       />
       <ErrorMessage
