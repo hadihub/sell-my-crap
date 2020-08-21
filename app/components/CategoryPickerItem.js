@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import AppText from "./AppText";
-import CircularIcon from "./CircularIcon";
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import AppText from './AppText';
+import CircularIcon from './CircularIcon';
 
 export default function CategoryPickerItem({ item, onPress }) {
   return (
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 25,
     paddingVertical: 15,
-    alignItems: "center",
+    alignItems: 'center',
   },
   label: {
     marginTop: 10,

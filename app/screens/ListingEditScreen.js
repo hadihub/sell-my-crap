@@ -1,26 +1,26 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import * as Yup from "yup";
-import AppScreen from "../components/AppScreen";
-import CategoryPickerItem from "../components/CategoryPickerItem";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import * as Yup from 'yup';
+import AppScreen from '../components/AppScreen';
+import CategoryPickerItem from '../components/CategoryPickerItem';
 import {
   AppForm as Form,
   AppFormField as FormField,
   AppFormPicker as Picker,
   FormSubmitButton,
-} from "../components/forms";
+} from '../components/forms';
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string().required().min(1).label("Title"),
-  price: Yup.number().required().min(1).max(10000).label("Price"),
-  description: Yup.string().label("Description"),
-  category: Yup.object().required().nullable().label("Category"),
+  title: Yup.string().required().min(1).label('Title'),
+  price: Yup.number().required().min(1).max(10000).label('Price'),
+  description: Yup.string().label('Description'),
+  category: Yup.object().required().nullable().label('Category'),
 });
 
 const categories = [
-  { label: "Furniture", value: 1, backgroundColor: "red", icon: "apps" },
-  { label: "Clothing", value: 2, backgroundColor: "green", icon: "email" },
-  { label: "Camera", value: 3, backgroundColor: "blue", icon: "lock" },
+  { label: 'Furniture', value: 1, backgroundColor: 'red', icon: 'apps' },
+  { label: 'Clothing', value: 2, backgroundColor: 'green', icon: 'email' },
+  { label: 'Camera', value: 3, backgroundColor: 'blue', icon: 'lock' },
 ];
 
 function ListingEditScreen() {
@@ -28,9 +28,9 @@ function ListingEditScreen() {
     <AppScreen style={styles.container}>
       <Form
         initialValues={{
-          title: "",
-          price: "",
-          description: "",
+          title: '',
+          price: '',
+          description: '',
           category: null,
         }}
         onSubmit={(values) => console.log(values)}

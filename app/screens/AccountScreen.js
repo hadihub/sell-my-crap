@@ -1,23 +1,23 @@
-import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
-import AppScreen from "../components/AppScreen";
-import CircularIcon from "../components/CircularIcon";
-import ListItem from "../components/lists/ListItem";
-import ListItemSepartor from "../components/lists/ListItemSeparator";
-import colors from "../config/colors";
+import React from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
+import AppScreen from '../components/AppScreen';
+import CircularIcon from '../components/CircularIcon';
+import ListItem from '../components/lists/ListItem';
+import ListItemSepartor from '../components/lists/ListItemSeparator';
+import colors from '../config/colors';
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: 'My Listings',
     icon: {
-      name: "format-list-bulleted",
+      name: 'format-list-bulleted',
       backgroundColor: colors.primary,
     },
   },
   {
-    title: "My Messages",
+    title: 'My Messages',
     icon: {
-      name: "email",
+      name: 'email',
       backgroundColor: colors.secondary,
     },
   },
@@ -30,7 +30,7 @@ export default function AccountScreen() {
         <ListItem
           title="Hadi M"
           subTitle="mh.elhadi@outlook.com"
-          image={require("../assets/hadi.jpg")}
+          image={require('../assets/hadi.jpg')}
         />
       </View>
       <View style={styles.container}>

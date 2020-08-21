@@ -1,22 +1,22 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import AppScreen from "../components/AppScreen";
-import { FlatList } from "react-native-gesture-handler";
-import Card from "../components/Card";
-import colors from "../config/colors";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import AppScreen from '../components/AppScreen';
+import Card from '../components/Card';
+import colors from '../config/colors';
 
 const listings = [
   {
     id: 1,
-    title: "red jacket for sale",
+    title: 'red jacket for sale',
     price: 100,
-    image: require("../assets/jacket.jpg"),
+    image: require('../assets/jacket.jpg'),
   },
   {
     id: 2,
-    title: "couch in great condition",
+    title: 'couch in great condition',
     price: 400,
-    image: require("../assets/couch.jpg"),
+    image: require('../assets/couch.jpg'),
   },
 ];
 

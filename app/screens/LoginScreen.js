@@ -1,22 +1,22 @@
-import React from "react";
-import { Image, StyleSheet } from "react-native";
-import * as Yup from "yup";
-import AppScreen from "../components/AppScreen";
-import { AppForm, AppFormField, FormSubmitButton } from "../components/forms";
+import React from 'react';
+import { Image, StyleSheet } from 'react-native';
+import * as Yup from 'yup';
+import AppScreen from '../components/AppScreen';
+import { AppForm, AppFormField, FormSubmitButton } from '../components/forms';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().required().email().label("Email"),
-  password: Yup.string().required().min(4).matches().label("Password"),
+  email: Yup.string().required().email().label('Email'),
+  password: Yup.string().required().min(4).matches().label('Password'),
 });
 
 export default function LoginScreen() {
   return (
     <AppScreen style={styles.container}>
-      <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+      <Image style={styles.logo} source={require('../assets/logo-red.png')} />
       <AppForm
         initialValues={{
-          email: "",
-          password: "",
+          email: '',
+          password: '',
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   logo: {
-    alignSelf: "center",
+    alignSelf: 'center',
     height: 80,
     marginBottom: 20,
     marginTop: 50,

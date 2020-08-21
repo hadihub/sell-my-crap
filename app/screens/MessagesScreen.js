@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import { FlatList, StyleSheet } from "react-native";
-import AppScreen from "../components/AppScreen";
-import ListItem from "../components/lists/ListItem";
-import ListItemDeleteAction from "../components/lists/ListItemDeleteAction";
-import ListItemSeparator from "../components/lists/ListItemSeparator";
+import React, { useState } from 'react';
+import { FlatList, StyleSheet } from 'react-native';
+import AppScreen from '../components/AppScreen';
+import ListItem from '../components/lists/ListItem';
+import ListItemDeleteAction from '../components/lists/ListItemDeleteAction';
+import ListItemSeparator from '../components/lists/ListItemSeparator';
 
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
-    image: require("../assets/hadi.jpg"),
+    title: 'T1',
+    description: 'D1',
+    image: require('../assets/hadi.jpg'),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
-    image: require("../assets/hadi.jpg"),
+    title: 'T2',
+    description: 'D2',
+    image: require('../assets/hadi.jpg'),
   },
   {
     id: 3,
-    title: "T3",
-    description: "D3",
-    image: require("../assets/hadi.jpg"),
+    title: 'T3',
+    description: 'D3',
+    image: require('../assets/hadi.jpg'),
   },
   {
     id: 4,
-    title: "T4",
-    description: "D4",
-    image: require("../assets/hadi.jpg"),
+    title: 'T4',
+    description: 'D4',
+    image: require('../assets/hadi.jpg'),
   },
 ];
 
@@ -53,7 +53,7 @@ export default function MessagesScreen() {
             title={item.title}
             subTitle={item.description}
             image={item.image}
-            onPress={() => console.log("Message selected", item)}
+            onPress={() => console.log('Message selected', item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
@@ -66,9 +66,9 @@ export default function MessagesScreen() {
           setMessages([
             {
               id: 3,
-              title: "T3",
-              description: "D3",
-              image: require("../assets/hadi.jpg"),
+              title: 'T3',
+              description: 'D3',
+              image: require('../assets/hadi.jpg'),
             },
           ])
         }

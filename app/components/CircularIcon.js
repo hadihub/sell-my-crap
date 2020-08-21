@@ -1,21 +1,21 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
 export default function CircularIcon({
   name,
   size = 40,
-  backgroundColor = "#000",
-  iconColor = "#fff",
+  backgroundColor = '#000',
+  iconColor = '#fff',
 }) {
   return (
     <View
       style={{
-        alignItems: "center",
+        alignItems: 'center',
         backgroundColor: backgroundColor,
         borderRadius: size / 2,
         height: size,
-        justifyContent: "center",
+        justifyContent: 'center',
         width: size,
       }}
     >

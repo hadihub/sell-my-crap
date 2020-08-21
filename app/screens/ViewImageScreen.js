@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import colors from "../config/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+import colors from '../config/colors';
 
 export default function ViewImageScreen() {
   return (
@@ -15,7 +15,7 @@ export default function ViewImageScreen() {
       <Image
         resizeMode="contain"
         style={styles.image}
-        source={require("../assets/chair.jpg")}
+        source={require('../assets/chair.jpg')}
       />
     </View>
   );
@@ -26,17 +26,17 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
   },
   closeIcon: {
-    position: "absolute",
+    position: 'absolute',
     top: 40,
     left: 30,
   },
   deleteIcon: {
-    position: "absolute",
+    position: 'absolute',
     top: 40,
     right: 30,
   },
   image: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
 });

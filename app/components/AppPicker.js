@@ -1,5 +1,5 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React, { useState } from "react";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React, { useState } from 'react';
 import {
   Button,
   FlatList,
@@ -7,11 +7,11 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   View,
-} from "react-native";
-import defaultStyles from "../config/styles";
-import AppScreen from "./AppScreen";
-import AppText from "./AppText";
-import PickerItem from "./PickerItem";
+} from 'react-native';
+import defaultStyles from '../config/styles';
+import AppScreen from './AppScreen';
+import AppText from './AppText';
+import PickerItem from './PickerItem';
 
 export default function AppPicker({
   icon,
@@ -21,7 +21,7 @@ export default function AppPicker({
   PickerItemComponent = PickerItem,
   selectedItem,
   placeholder,
-  width = "100%",
+  width = '100%',
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   const handleItemSelection = (item) => {
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: defaultStyles.color.light,
     borderRadius: 20,
-    flexDirection: "row",
+    flexDirection: 'row',
     marginVertical: 10,
     padding: 15,
   },
@@ -85,6 +85,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   modal: {
-    alignItems: "center",
+    alignItems: 'center',
   },
 });

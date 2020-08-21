@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import colors from "../config/colors";
-import AppText from "./AppText";
+import React from 'react';
+import { Image, StyleSheet, View } from 'react-native';
+import colors from '../config/colors';
+import AppText from './AppText';
 
 export default function Card({ title, subTitle, image }) {
   return (
@@ -20,18 +20,18 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: colors.white,
     marginBottom: 20,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   detailsContainer: {
     padding: 20,
   },
   image: {
-    width: "100%",
+    width: '100%',
     height: 200,
   },
   subTitle: {
     color: colors.secondary,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   title: {
     marginBottom: 10,
