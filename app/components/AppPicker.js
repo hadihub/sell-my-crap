@@ -9,12 +9,14 @@ import {
   View,
 } from "react-native";
 import defaultStyles from "../config/styles";
+import AppScreen from "./AppScreen";
 import AppText from "./AppText";
 import PickerItem from "./PickerItem";
 
 export default function AppPicker({
   icon,
   items,
+  numberOfColumns = 1,
   onSelectItem,
   PickerItemComponent = PickerItem,
   selectedItem,
@@ -50,16 +52,19 @@ export default function AppPicker({
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
         <Button title="close" onPress={() => setModalVisible(false)} />
-        <FlatList
-          data={items}
-          keyExtractor={(item) => item.value.toString()}
-          renderItem={({ item }) => (
-            <PickerItemComponent
-              label={item.label}
-              onPress={() => handleItemSelection(item)}
-            />
-          )}
-        />
+        <AppScreen style={styles.modal}>
+          <FlatList
+            numColumns={numberOfColumns}
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => (
+              <PickerItemComponent
+                item={item}
+                onPress={() => handleItemSelection(item)}
+              />
+            )}
+          />
+        </AppScreen>
       </Modal>
     </React.Fragment>
   );
@@ -67,7 +72,6 @@ export default function AppPicker({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
     backgroundColor: defaultStyles.color.light,
     borderRadius: 20,
     flexDirection: "row",
@@ -75,9 +79,12 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   icon: {
-    margin: 10,
+    marginRight: 10,
   },
   text: {
     flex: 1,
+  },
+  modal: {
+    alignItems: "center",
   },
 });
