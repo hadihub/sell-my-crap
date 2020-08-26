@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import AppScreen from './app/components/AppScreen';
-import ImageInput from './app/components/ImageInput';
+import ImageInputList from './app/components/ImageInputList';
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
 
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
+  };
 
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if (!granted) alert('you need to enable permission');
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   };
 
   return (
     <AppScreen>
-      <ImageInput
-        imageUri={imageUri}
-        onChangeImage={(uri) => setImageUri(uri)}
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </AppScreen>
   );
