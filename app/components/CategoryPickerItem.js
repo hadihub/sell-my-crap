@@ -1,17 +1,19 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import AppText from './AppText';
 import CircularIcon from './CircularIcon';
 
 export default function CategoryPickerItem({ item, onPress }) {
   return (
     <View style={styles.container}>
-      <CircularIcon
-        backgroundColor={item.backgroundColor}
-        name={item.icon}
-        size={60}
-      />
-      <AppText style={styles.label}>{item.label}</AppText>
+      <TouchableOpacity onPress={onPress}>
+        <CircularIcon
+          backgroundColor={item.backgroundColor}
+          name={item.icon}
+          size={60}
+        />
+        <AppText style={styles.label}>{item.label}</AppText>
+      </TouchableOpacity>
     </View>
   );
 }
