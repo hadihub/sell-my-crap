@@ -1,9 +1,15 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import ListingEditScreen from './app/screens/ListingEditScreen';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 
 export default function App() {
-  return <ListingEditScreen />;
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AuthNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
