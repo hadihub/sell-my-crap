@@ -1,8 +1,7 @@
-import ActivityIndicator from '';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, StyleSheet } from 'react-native';
 import listingsApi from '../api/listings';
+import ActivityIndicator from '../components/ActivityIndicator';
 import AppButton from '../components/AppButton';
 import AppScreen from '../components/AppScreen';
 import AppText from '../components/AppText';
@@ -39,6 +38,7 @@ export default function ListingsScreen({ navigation }) {
           <AppButton title="retry" onPress={loadListings} />
         </>
       )}
+      <ActivityIndicator visible={loading} />
       <FlatList
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
