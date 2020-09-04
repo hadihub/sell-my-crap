@@ -5,12 +5,19 @@ import AppTextInput from '../AppTextInput';
 import ErrorMessage from './ErrorMessage';
 
 export default function AppFromField({ name, width = '100%', ...otherProps }) {
-  const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
+  const {
+    setFieldTouched,
+    setFieldValue,
+    values,
+    errors,
+    touched,
+  } = useFormikContext();
   return (
     <React.Fragment>
       <AppTextInput
         onBlur={() => setFieldTouched(name)} // this sets the touched.email to true
-        onChangeText={handleChange(name)}
+        onChangeText={(text) => setFieldValue(name, text)}
+        value={values[name]}
         width={width}
         {...otherProps}
       />

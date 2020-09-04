@@ -5,16 +5,16 @@ import CircularIcon from './CircularIcon';
 
 export default function CategoryPickerItem({ item, onPress }) {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.container}>
         <CircularIcon
           backgroundColor={item.backgroundColor}
           name={item.icon}
           size={60}
         />
         <AppText style={styles.label}>{item.label}</AppText>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 }
 
